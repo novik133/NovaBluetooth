@@ -1,0 +1,159 @@
+/* Nova Bluetooth - Styling that integrates with XFCE panel theme
+ *
+ * Author: Kamil 'Novik' Nowicki <noviktech.com>
+ * Repository: https://github.com/noviktech133/NovaBluetooth
+ * License: GPL-2.0-or-later
+ */
+
+/* ── Popup window (background drawn by Cairo for rounded corners) ── */
+.nova-bt-popup {
+  background-color: transparent;
+  color: @theme_fg_color;
+}
+
+/* ── Header: title + power switch ── */
+.nova-bt-header {
+  padding: 12px 16px;
+  background-color: @theme_bg_color;
+  border-bottom: 1px solid @borders;
+}
+
+.nova-bt-header-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: @theme_fg_color;
+}
+
+/* ── Scanning status bar ── */
+.nova-bt-scan-bar {
+  padding: 6px 16px;
+  background-color: @theme_bg_color;
+  border-bottom: 1px solid @borders;
+}
+
+/* ── Device list ── */
+.nova-bt-device-list {
+  background-color: @theme_bg_color;
+  padding: 4px 0;
+}
+
+.nova-bt-device-list row {
+  background-color: @theme_bg_color;
+  padding: 0;
+}
+
+.nova-bt-device-list row:hover {
+  background-color: @theme_selected_bg_color;
+}
+
+/* ── Individual device row ── */
+.nova-bt-device-row {
+  padding: 8px 12px;
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+}
+
+.nova-bt-device-row:hover {
+  background-color: @theme_selected_bg_color;
+}
+
+/* ── Device icon ── */
+.nova-bt-device-icon {
+  margin-right: 10px;
+}
+
+/* ── Device name ── */
+.nova-bt-device-name {
+  font-weight: bold;
+  color: @theme_fg_color;
+}
+
+/* ── Device status text ── */
+.nova-bt-device-status {
+  font-size: 0.85em;
+  color: @theme_fg_color;
+}
+
+/* ── Connected device accent ── */
+.nova-bt-device-row.connected .nova-bt-device-name {
+  color: @theme_selected_bg_color;
+}
+
+.nova-bt-device-row.connected .nova-bt-device-icon {
+  color: @theme_selected_bg_color;
+}
+
+/* ── Battery label ── */
+.nova-bt-battery {
+  font-size: 0.8em;
+  color: @theme_fg_color;
+  margin-left: 4px;
+}
+
+/* ── Footer with scan button ── */
+.nova-bt-footer {
+  padding: 8px 16px;
+  background-color: @theme_bg_color;
+  border-top: 1px solid @borders;
+}
+
+/* ── Scan button ── */
+.nova-bt-scan-button {
+  padding: 6px 14px;
+}
+
+/* ── Empty state ── */
+.nova-bt-empty-state {
+  padding: 24px 16px;
+  background-color: @theme_bg_color;
+  color: @theme_fg_color;
+}
+
+/* ── Scanning spinner ── */
+.nova-bt-spinner {
+  margin-right: 8px;
+}
+
+/* ── Panel button ── */
+.nova-bt-panel-button {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.nova-bt-panel-button:hover {
+  background-color: alpha(@theme_fg_color, 0.1);
+}
+
+/* ── Panel icon states ── */
+.nova-bt-icon-disabled {
+  opacity: 0.4;
+}
+
+.nova-bt-icon-active {
+  opacity: 1.0;
+}
+
+.nova-bt-icon-connected {
+  color: @theme_selected_bg_color;
+}
+
+/* ── Device action buttons (Connect/Disconnect) ── */
+.nova-bt-action-button {
+  padding: 2px 10px;
+}
+
+/* ── Context menu (Forget / Info) ── */
+.nova-bt-menu-button {
+  padding: 2px 4px;
+  opacity: 0.6;
+}
+
+.nova-bt-menu-button:hover {
+  opacity: 1.0;
+}
+
+/* ── Scrolled window inside device list ── */
+.nova-bt-scroll {
+  background-color: @theme_bg_color;
+}

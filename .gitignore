@@ -1,0 +1,20 @@
+# Meson build directory
+build/
+builddir/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Compiled objects
+*.o
+*.so
+*.la
+
+# Generated files
+*.vapi
+*.h
+*.stamp

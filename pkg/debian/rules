@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	meson setup build --prefix=/usr
+
+override_dh_auto_build:
+	meson compile -C build
+
+override_dh_auto_install:
+	DESTDIR=$(CURDIR)/debian/nova-bluetooth meson install -C build

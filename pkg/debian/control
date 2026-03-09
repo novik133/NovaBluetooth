@@ -1,0 +1,26 @@
+Source: nova-bluetooth
+Section: xfce
+Priority: optional
+Maintainer: Kamil 'Novik' Nowicki <noviktech.com>
+Homepage: https://github.com/noviktech133/NovaBluetooth
+Build-Depends: debhelper-compat (= 13),
+               meson,
+               ninja-build,
+               valac,
+               pkg-config,
+               libglib2.0-dev,
+               libgtk-3-dev,
+               libxfce4panel-2.0-dev,
+               libxfce4ui-2-dev,
+               libxfconf-0-dev
+Standards-Version: 4.6.2
+
+Package: nova-bluetooth
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, bluez
+Description: Modern Bluetooth indicator for the XFCE4 panel
+ Nova Bluetooth is a native XFCE4 panel plugin that provides a modern
+ Bluetooth device manager. It communicates directly with BlueZ over D-Bus
+ without relying on any external programs. Supports device discovery,
+ connection, disconnection, pairing, battery level display, and live
+ status updates.

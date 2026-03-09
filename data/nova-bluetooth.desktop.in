@@ -1,0 +1,9 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+Name=Nova Bluetooth
+Comment=Modern Bluetooth manager for XFCE panel
+Icon=bluetooth
+X-XFCE-Module=nova-bluetooth
+X-XFCE-Internal=false
+X-XFCE-API=2.0
