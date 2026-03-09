@@ -32,6 +32,12 @@ jobs:
             gobject-introspection \
             libgirepository1.0-dev
 
+      - name: Generate VAPI files from GIR
+        run: |
+          vapigen --library=libxfconf-0 --pkg=glib-2.0 --pkg=gobject-2.0 /usr/share/gir-1.0/Xfconf-0.gir --directory=/usr/share/vala/vapi/ || true
+          vapigen --library=libxfce4ui-2 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4ui-2.0.gir --directory=/usr/share/vala/vapi/ || true
+          vapigen --library=libxfce4panel-2.0 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4panel-2.0.gir --directory=/usr/share/vala/vapi/ || true
+
       - name: Configure
         run: meson setup build
 
@@ -74,6 +80,12 @@ jobs:
             gobject-introspection-devel \
             rpm-build \
             rpmdevtools
+
+      - name: Generate VAPI files from GIR
+        run: |
+          vapigen --library=libxfconf-0 --pkg=glib-2.0 --pkg=gobject-2.0 /usr/share/gir-1.0/Xfconf-0.gir --directory=/usr/share/vala/vapi/ || true
+          vapigen --library=libxfce4ui-2 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4ui-2.0.gir --directory=/usr/share/vala/vapi/ || true
+          vapigen --library=libxfce4panel-2.0 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4panel-2.0.gir --directory=/usr/share/vala/vapi/ || true
 
       - name: Configure
         run: meson setup build
