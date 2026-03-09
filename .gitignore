@@ -14,7 +14,11 @@ builddir/
 *.so
 *.la
 
-# Generated files
+# Generated files (in build dir)
+*.stamp
+
+# Ignore generated vapi/header files except our custom ones in vapi/
 *.vapi
 *.h
-*.stamp
+!vapi/*.vapi
+!vapi/*.deps
