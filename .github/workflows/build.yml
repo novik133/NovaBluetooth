@@ -28,16 +28,9 @@ jobs:
             libgtk-3-dev \
             libxfce4panel-2.0-dev \
             libxfce4ui-2-dev \
-            libxfconf-0-dev
-
-      - name: Configure
-        run: meson setup build
-
-      - name: Compile
-        run: meson compile -C build
-
-      - name: Install packaging tools
-        run: apt-get install -y --no-install-recommends debhelper devscripts
+            libxfconf-0-dev \
+            debhelper \
+            devscripts
 
       - name: Build Debian package
         run: |
