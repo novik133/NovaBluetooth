@@ -31,7 +31,8 @@ jobs:
             automake \
             libtool \
             make \
-            libxfce4util-dev
+            libxfce4util-dev \
+            ca-certificates
 
       - name: Build and install xfce4-vala
         run: |
@@ -82,11 +83,10 @@ jobs:
             xfce4-panel-devel \
             libxfce4ui-devel \
             xfconf-devel \
+            xfce4-dev-tools \
             xfce4-vala \
-            autoconf \
-            automake \
-            libtool \
-            make
+            rpm-build \
+            rpmdevtools
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -99,9 +99,11 @@ jobs:
 
       - name: Build RPM package
         run: |
-          cd pkg/fedora
-          rpmbuild -ba nova-bluetooth.spec --define "_topdir $(pwd)/.."
-          mv ../RPMS/*/*.rpm ../..
+          mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+          cp pkg/fedora/nova-bluetooth.spec ~/rpmbuild/SPECS/
+          tar czf ~/rpmbuild/SOURCES/nova-bluetooth-0.1.0.tar.gz --transform 's,^,NovaBluetooth-0.1.0/,' --exclude=.git --exclude=build *
+          rpmbuild -ba ~/rpmbuild/SPECS/nova-bluetooth.spec
+          cp ~/rpmbuild/RPMS/*/*.rpm .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -125,21 +127,28 @@ jobs:
             gtk3 \
             xfce4-panel \
             libxfce4ui \
-            xfconf
+            xfconf \
+            sudo
 
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Create build user
+        run: |
+          useradd -m builder
+          echo "builder ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+          chown -R builder:builder .
+
       - name: Configure
-        run: meson setup build
+        run: sudo -u builder meson setup build
 
       - name: Compile
-        run: meson compile -C build
+        run: sudo -u builder meson compile -C build
 
       - name: Build package
         run: |
           cd pkg/archlinux
-          makepkg --noconfirm -sf
+          sudo -u builder makepkg --noconfirm -sf
           mv *.pkg.tar.zst ../..
 
       - name: Upload artifact
