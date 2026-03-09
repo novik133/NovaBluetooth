@@ -3,7 +3,7 @@ Version:        0.1.0
 Release:        1%{?dist}
 Summary:        Modern Bluetooth indicator for the XFCE4 panel
 License:        GPL-2.0-or-later
-URL:            https://github.com/noviktech133/NovaBluetooth
+URL:            https://github.com/novik133/NovaBluetooth
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
@@ -17,7 +17,11 @@ BuildRequires:  pkgconfig(libxfce4panel-2.0) >= 4.14
 BuildRequires:  pkgconfig(libxfce4ui-2) >= 4.14
 BuildRequires:  pkgconfig(libxfconf-0) >= 4.14
 BuildRequires:  xfce4-dev-tools
-BuildRequires:  xfce4-vala
+BuildRequires:  git
+BuildRequires:  autoconf
+BuildRequires:  automake
+BuildRequires:  libtool
+BuildRequires:  make
 
 Requires:       bluez
 

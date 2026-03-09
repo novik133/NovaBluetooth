@@ -7,8 +7,8 @@
 ![Panel](https://img.shields.io/badge/panel-XFCE4-2284D2?style=flat-square)
 ![Build](https://img.shields.io/badge/build-Meson-blueviolet?style=flat-square)
 ![BlueZ](https://img.shields.io/badge/backend-BlueZ%20D--Bus-003366?style=flat-square)
-![CI](https://img.shields.io/github/actions/workflow/status/noviktech133/NovaBluetooth/build.yml?style=flat-square&label=CI)
-[![PayPal](https://img.shields.io/badge/PayPal-Support%20Development-00457C?style=flat-square&logo=paypal)](https://paypal.me/noviktech133)
+![CI](https://img.shields.io/github/actions/workflow/status/novik133/NovaBluetooth/build.yml?style=flat-square&label=CI)
+[![PayPal](https://img.shields.io/badge/PayPal-Support%20Development-00457C?style=flat-square&logo=paypal)](https://paypal.me/novik133)
 
 A modern, native Bluetooth indicator plugin for the XFCE4 panel. Built with Vala and GTK3, it communicates directly with BlueZ over D-Bus without relying on any external programs.
 
@@ -134,15 +134,15 @@ nova-bluetooth/
 
 If you find Nova Bluetooth useful, consider supporting development:
 
-[![PayPal](https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal)](https://paypal.me/noviktech133)
+[![PayPal](https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal)](https://paypal.me/novik133)
 
 ## Author
 
 **Kamil 'Novik' Nowicki**
 
 - Website: [noviktech.com](http://noviktech.com)
-- GitHub: [noviktech133](https://github.com/noviktech133)
-- Repository: [NovaBluetooth](https://github.com/noviktech133/NovaBluetooth)
+- GitHub: [novik133](https://github.com/novik133)
+- Repository: [NovaBluetooth](https://github.com/novik133/NovaBluetooth)
 
 ## License
 

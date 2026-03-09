@@ -4,7 +4,7 @@
  *
  * Author: Kamil 'Novik' Nowicki <noviktech.com>
  * Website: http://noviktech.com
- * Repository: https://github.com/noviktech133/NovaBluetooth
+ * Repository: https://github.com/novik133/NovaBluetooth
  * License: GPL-2.0-or-later
  */
 
@@ -58,7 +58,7 @@ namespace NovaBluetooth {
                 "program-name", "Nova Bluetooth",
                 "version", "0.1.0",
                 "comments", "Modern Bluetooth indicator for the XFCE panel",
-                "website", "https://github.com/noviktech133/NovaBluetooth",
+                "website", "https://github.com/novik133/NovaBluetooth",
                 "copyright", "Copyright (c) Kamil 'Novik' Nowicki",
                 "authors", new string[] { "Kamil 'Novik' Nowicki" },
                 "license-type", Gtk.License.GPL_2_0,

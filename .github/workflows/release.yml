@@ -25,6 +25,7 @@ jobs:
             libxfce4panel-2.0-dev \
             libxfce4ui-2-dev \
             libxfconf-0-dev \
+            xfce4-dev-tools \
             git \
             autoconf \
             automake \
@@ -83,9 +84,23 @@ jobs:
             libxfce4ui-devel \
             xfconf-devel \
             xfce4-dev-tools \
-            xfce4-vala \
             rpm-build \
-            rpmdevtools
+            rpmdevtools \
+            git \
+            autoconf \
+            automake \
+            libtool \
+            make
+
+      - name: Build and install xfce4-vala
+        run: |
+          git clone https://gitlab.xfce.org/bindings/xfce4-vala.git
+          cd xfce4-vala
+          ./autogen.sh --prefix=/usr
+          make -j$(nproc)
+          make install
+          cd ..
+          rm -rf xfce4-vala
 
       - name: Checkout
         uses: actions/checkout@v4

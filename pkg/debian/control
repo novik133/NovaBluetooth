@@ -2,7 +2,7 @@ Source: nova-bluetooth
 Section: xfce
 Priority: optional
 Maintainer: Kamil 'Novik' Nowicki <noviktech.com>
-Homepage: https://github.com/noviktech133/NovaBluetooth
+Homepage: https://github.com/novik133/NovaBluetooth
 Build-Depends: debhelper-compat (= 13),
                meson,
                ninja-build,
@@ -13,6 +13,7 @@ Build-Depends: debhelper-compat (= 13),
                libxfce4panel-2.0-dev,
                libxfce4ui-2-dev,
                libxfconf-0-dev,
+               xfce4-dev-tools,
                git,
                autoconf,
                automake,

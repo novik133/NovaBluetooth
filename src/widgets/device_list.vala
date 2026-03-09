@@ -3,7 +3,7 @@
  * Sorts devices by connection state, then by name.
  *
  * Author: Kamil 'Novik' Nowicki <noviktech.com>
- * Repository: https://github.com/noviktech133/NovaBluetooth
+ * Repository: https://github.com/novik133/NovaBluetooth
  * License: GPL-2.0-or-later
  */
 

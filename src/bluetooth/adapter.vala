@@ -2,7 +2,7 @@
  * Controls power, discovery, and adapter-level settings.
  *
  * Author: Kamil 'Novik' Nowicki <noviktech.com>
- * Repository: https://github.com/noviktech133/NovaBluetooth
+ * Repository: https://github.com/novik133/NovaBluetooth
  * License: GPL-2.0-or-later
  */
 

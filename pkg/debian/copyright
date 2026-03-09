@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: nova-bluetooth
 Upstream-Contact: Kamil 'Novik' Nowicki <noviktech.com>
-Source: https://github.com/noviktech133/NovaBluetooth
+Source: https://github.com/novik133/NovaBluetooth
 
 Files: *
 Copyright: Kamil 'Novik' Nowicki <noviktech.com>

@@ -1,13 +1,13 @@
 # Maintainer: Kamil 'Novik' Nowicki <noviktech.com>
 # Website: http://noviktech.com
-# Repository: https://github.com/noviktech133/NovaBluetooth
+# Repository: https://github.com/novik133/NovaBluetooth
 
 pkgname=nova-bluetooth
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="Modern Bluetooth indicator for the XFCE4 panel"
 arch=('x86_64' 'aarch64')
-url="https://github.com/noviktech133/NovaBluetooth"
+url="https://github.com/novik133/NovaBluetooth"
 license=('GPL-2.0-or-later')
 depends=('gtk3' 'glib2' 'xfce4-panel' 'libxfce4ui' 'xfconf' 'bluez')
 makedepends=('meson' 'vala' 'pkg-config')

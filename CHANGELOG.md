@@ -26,4 +26,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Packaging support for Debian, Fedora, and Arch Linux
 - GitHub Actions CI workflow for building on Debian, Fedora, and Arch Linux
 
-[0.1.0]: https://github.com/noviktech133/NovaBluetooth/releases/tag/v0.1.0
+[0.1.0]: https://github.com/novik133/NovaBluetooth/releases/tag/v0.1.0
