@@ -32,11 +32,27 @@ jobs:
             gobject-introspection \
             libgirepository1.0-dev
 
-      - name: Generate VAPI files from GIR
+      - name: Debug and Generate VAPI files
         run: |
-          vapigen --library=libxfconf-0 --pkg=glib-2.0 --pkg=gobject-2.0 /usr/share/gir-1.0/Xfconf-0.gir --directory=/usr/share/vala/vapi/ || true
-          vapigen --library=libxfce4ui-2 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4ui-2.0.gir --directory=/usr/share/vala/vapi/ || true
-          vapigen --library=libxfce4panel-2.0 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4panel-2.0.gir --directory=/usr/share/vala/vapi/ || true
+          echo "=== Checking for GIR files ==="
+          ls -la /usr/share/gir-1.0/ | grep -i xf || echo "No XFCE GIR files found"
+          echo "=== Checking Vala API directory ==="
+          ls -la /usr/share/vala/vapi/ | head -20
+          echo "=== Attempting to generate VAPI files ==="
+          if [ -f /usr/share/gir-1.0/Xfconf-0.gir ]; then
+            echo "Generating libxfconf-0.vapi..."
+            vapigen --library=libxfconf-0 --pkg=glib-2.0 --pkg=gobject-2.0 /usr/share/gir-1.0/Xfconf-0.gir --directory=/usr/share/vala/vapi/ || echo "Failed to generate libxfconf-0.vapi"
+          fi
+          if [ -f /usr/share/gir-1.0/Libxfce4ui-2.0.gir ]; then
+            echo "Generating libxfce4ui-2.vapi..."
+            vapigen --library=libxfce4ui-2 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4ui-2.0.gir --directory=/usr/share/vala/vapi/ || echo "Failed to generate libxfce4ui-2.vapi"
+          fi
+          if [ -f /usr/share/gir-1.0/Libxfce4panel-2.0.gir ]; then
+            echo "Generating libxfce4panel-2.0.vapi..."
+            vapigen --library=libxfce4panel-2.0 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4panel-2.0.gir --directory=/usr/share/vala/vapi/ || echo "Failed to generate libxfce4panel-2.0.vapi"
+          fi
+          echo "=== Generated VAPI files ==="
+          ls -la /usr/share/vala/vapi/ | grep -i xf || echo "No XFCE VAPI files generated"
 
       - name: Configure
         run: meson setup build
@@ -81,11 +97,27 @@ jobs:
             rpm-build \
             rpmdevtools
 
-      - name: Generate VAPI files from GIR
+      - name: Debug and Generate VAPI files
         run: |
-          vapigen --library=libxfconf-0 --pkg=glib-2.0 --pkg=gobject-2.0 /usr/share/gir-1.0/Xfconf-0.gir --directory=/usr/share/vala/vapi/ || true
-          vapigen --library=libxfce4ui-2 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4ui-2.0.gir --directory=/usr/share/vala/vapi/ || true
-          vapigen --library=libxfce4panel-2.0 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4panel-2.0.gir --directory=/usr/share/vala/vapi/ || true
+          echo "=== Checking for GIR files ==="
+          ls -la /usr/share/gir-1.0/ | grep -i xf || echo "No XFCE GIR files found"
+          echo "=== Checking Vala API directory ==="
+          ls -la /usr/share/vala/vapi/ | head -20
+          echo "=== Attempting to generate VAPI files ==="
+          if [ -f /usr/share/gir-1.0/Xfconf-0.gir ]; then
+            echo "Generating libxfconf-0.vapi..."
+            vapigen --library=libxfconf-0 --pkg=glib-2.0 --pkg=gobject-2.0 /usr/share/gir-1.0/Xfconf-0.gir --directory=/usr/share/vala/vapi/ || echo "Failed to generate libxfconf-0.vapi"
+          fi
+          if [ -f /usr/share/gir-1.0/Libxfce4ui-2.0.gir ]; then
+            echo "Generating libxfce4ui-2.vapi..."
+            vapigen --library=libxfce4ui-2 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4ui-2.0.gir --directory=/usr/share/vala/vapi/ || echo "Failed to generate libxfce4ui-2.vapi"
+          fi
+          if [ -f /usr/share/gir-1.0/Libxfce4panel-2.0.gir ]; then
+            echo "Generating libxfce4panel-2.0.vapi..."
+            vapigen --library=libxfce4panel-2.0 --pkg=gtk+-3.0 --pkg=glib-2.0 /usr/share/gir-1.0/Libxfce4panel-2.0.gir --directory=/usr/share/vala/vapi/ || echo "Failed to generate libxfce4panel-2.0.vapi"
+          fi
+          echo "=== Generated VAPI files ==="
+          ls -la /usr/share/vala/vapi/ | grep -i xf || echo "No XFCE VAPI files generated"
 
       - name: Configure
         run: meson setup build
