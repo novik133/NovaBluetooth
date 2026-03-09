@@ -16,7 +16,6 @@ BuildRequires:  pkgconfig(gtk+-3.0) >= 3.22
 BuildRequires:  pkgconfig(libxfce4panel-2.0) >= 4.14
 BuildRequires:  pkgconfig(libxfce4ui-2) >= 4.14
 BuildRequires:  pkgconfig(libxfconf-0) >= 4.14
-BuildRequires:  gobject-introspection-devel
 
 Requires:       bluez
 

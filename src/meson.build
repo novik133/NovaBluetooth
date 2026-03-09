@@ -33,6 +33,7 @@ shared_module(
   ],
   vala_args: [
     '--pkg', 'posix',
+    '--vapidir', meson.project_source_root() / 'vapi',
   ],
   install: true,
   install_dir: panel_pluginsdir,

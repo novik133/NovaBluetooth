@@ -12,9 +12,7 @@ Build-Depends: debhelper-compat (= 13),
                libgtk-3-dev,
                libxfce4panel-2.0-dev,
                libxfce4ui-2-dev,
-               libxfconf-0-dev,
-               gobject-introspection,
-               libgirepository1.0-dev
+               libxfconf-0-dev
 Standards-Version: 4.6.2
 
 Package: nova-bluetooth
