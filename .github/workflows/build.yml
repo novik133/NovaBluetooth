@@ -36,11 +36,14 @@ jobs:
       - name: Compile
         run: meson compile -C build
 
+      - name: Install packaging tools
+        run: apt-get install -y --no-install-recommends debhelper devscripts
+
       - name: Build Debian package
         run: |
-          cd pkg/debian
+          ln -s pkg/debian debian
           dpkg-buildpackage -us -uc -b --no-sign
-          mv ../*.deb ../..
+          mv ../*.deb .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
