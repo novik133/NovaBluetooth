@@ -29,7 +29,7 @@ A modern, native Bluetooth indicator plugin for the XFCE4 panel. Built with Vala
 ## Screenshots
 
 | Main popup with device list | Device info popover | How it Looks on Panel |
-|---|---|
+|---|---|---|
 | ![Main popup](Screenshots/1.png) | ![Device info](Screenshots/2.png) | ![How it looks on panel](Screenshots/3.png) |
 
 ## Dependencies
