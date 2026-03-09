@@ -100,9 +100,9 @@ nova-bluetooth/
     meson.build                Data file installation rules
     nova-bluetooth.css         GTK3 stylesheet for the plugin UI
     nova-bluetooth.desktop.in  XFCE panel plugin descriptor template
+  debian/                        Debian packaging files
   pkg/
     archlinux/PKGBUILD         Arch Linux package build script
-    debian/                    Debian packaging files
     fedora/nova-bluetooth.spec Fedora RPM spec file
   src/
     meson.build                Source build definition

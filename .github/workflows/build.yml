@@ -41,7 +41,6 @@ jobs:
 
       - name: Build Debian package
         run: |
-          ln -s pkg/debian debian
           dpkg-buildpackage -us -uc -b --no-sign
           mv ../*.deb .
 
